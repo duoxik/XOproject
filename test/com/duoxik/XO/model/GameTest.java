@@ -39,9 +39,9 @@ public class GameTest {
     @Test
     public void getField() throws Exception {
 
-        final Field inputField = new Field();
+        final Field inputField = new Field(3);
         inputField.setFigure(new Point(1, 1), Figure.X);
-        final Field expectedField = new Field();
+        final Field expectedField = new Field(3);
         expectedField.setFigure(new Point(1, 1), Figure.X);
 
         final Game game = new Game(null, inputField, null);
