@@ -15,7 +15,7 @@ public class MoveControllerTest {
     @Test
     public void applyFigure() throws AlreadyOccupiedException, InvalidPointException {
 
-        final Field inputField = new Field();
+        final Field inputField = new Field(3);
         final Point inputPoint = new Point(1, 1);
         final Figure inputFigure = Figure.X;
 
