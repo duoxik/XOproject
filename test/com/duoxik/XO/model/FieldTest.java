@@ -13,7 +13,7 @@ public class FieldTest {
     @Test
     public void getSize() throws Exception{
 
-        final Field field = new Field ();
+        final Field field = new Field (3);
         final int expectedSize = 3;
         final int actualSize = field.getSize();
 
@@ -23,7 +23,7 @@ public class FieldTest {
     @Test
     public void setFigure() throws Exception {
 
-        final Field field = new Field ();
+        final Field field = new Field (3);
         final Point inputPoint = new Point(0, 0);
 
         final Figure inputFigure = Figure.O;
@@ -39,7 +39,7 @@ public class FieldTest {
     @Test
     public void getFigureWhenFigureIsNotSet() throws Exception {
 
-        final Field field = new Field ();
+        final Field field = new Field (3);
         final Point inputPoint = new Point(0, 0);
         final Figure actualFigure = field.getFigure(inputPoint);
 
@@ -49,7 +49,7 @@ public class FieldTest {
     @Test
     public void getFigureWhenCoordinateXIsLessThenZero() throws Exception {
 
-        final Field field = new Field ();
+        final Field field = new Field (3);
         final Point inputPoint = new Point(-1, 0);
 
         try {
@@ -61,7 +61,7 @@ public class FieldTest {
     @Test
     public void getFigureWhenCoordinateYIsLessThenZero() throws Exception {
 
-        final Field field = new Field ();
+        final Field field = new Field (3);
         final Point inputPoint = new Point(0, -1);
 
         try {
@@ -73,7 +73,7 @@ public class FieldTest {
     @Test
     public void getFigureWhenCoordinateXIsMoreThenSizeField() throws Exception {
 
-        final Field field = new Field ();
+        final Field field = new Field (3);
         final Point inputPoint = new Point(field.getSize(), 0);
 
         try {
@@ -85,7 +85,7 @@ public class FieldTest {
     @Test
     public void getFigureWhenCoordinateYIsMoreThenSizeField() throws Exception {
 
-        final Field field = new Field ();
+        final Field field = new Field (3);
         final Point inputPoint = new Point(0, field.getSize());
 
         try {
@@ -97,7 +97,7 @@ public class FieldTest {
     @Test
     public void getFigureWhenCoordinateXAndYIsLessThenZero() throws Exception {
 
-        final Field field = new Field ();
+        final Field field = new Field (3);
         final Point inputPoint = new Point(-2, -1);
 
         try {
@@ -109,7 +109,7 @@ public class FieldTest {
     @Test
     public void getFigureWhenCoordinateXAndYIsMoreThenSizeField() throws Exception {
 
-        final Field field = new Field ();
+        final Field field = new Field (3);
         final Point inputPoint = new Point(field.getSize(), field.getSize());
 
         try {
