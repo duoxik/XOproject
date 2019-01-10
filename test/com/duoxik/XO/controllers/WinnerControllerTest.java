@@ -18,11 +18,9 @@ public class WinnerControllerTest {
         Field inputField = new Field(4);
         WinnerController testWinnerController = new WinnerController();
         Figure actualFigure = testWinnerController.getWinner(inputField);
-
         System.out.print("Winner null: ");
         View view = new View(inputField);
         view.showField();
-
         assertNull(actualFigure);
     }
 
@@ -30,7 +28,6 @@ public class WinnerControllerTest {
     public void getWinnerWhenWinnerIsXLine() throws InvalidPointException {
 
         Figure expectedFigure = Figure.X;
-
         for (int i = 0; i < 4; i++) {
             WinnerController testWinnerController = new WinnerController();
             Field inputField = new Field(4);
@@ -62,7 +59,6 @@ public class WinnerControllerTest {
     public void getWinnerWhenWinnerIsXColumn() throws InvalidPointException {
 
         Figure expectedFigure = Figure.X;
-
         for (int i = 0; i < 4; i++) {
             WinnerController testWinnerController = new WinnerController();
             Field inputField = new Field(4);
@@ -101,7 +97,6 @@ public class WinnerControllerTest {
         inputField.setFigure(new Point(3, 3), Figure.O);
         WinnerController testWinnerController = new WinnerController();
         Figure actualFigure = testWinnerController.getWinner(inputField);
-
         assertEquals(expectedFigure, actualFigure);
     }
 
@@ -115,7 +110,6 @@ public class WinnerControllerTest {
         inputField.setFigure(new Point(3, 3), Figure.O);
         WinnerController testWinnerController = new WinnerController();
         Figure actualFigure = testWinnerController.getWinner(inputField);
-
         assertNull(actualFigure);
     }
 
