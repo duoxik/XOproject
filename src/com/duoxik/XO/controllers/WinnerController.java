@@ -8,27 +8,33 @@ import java.awt.*;
 
 public class WinnerController {
 
-    public Figure getWinner(final Field field) throws InvalidPointException {
+    public Figure getWinner(final Field field) {
 
-        for (int i = 0; i < field.getSize(); i++) {
-            if (check(field, new Point(i, 0), p -> new Point(p.x, p.y + 1))) {
-                return field.getFigure(new Point (i,0));
+        try {
+            for (int i = 0; i < field.getSize(); i++) {
+                if (check(field, new Point(i, 0), p -> new Point(p.x, p.y + 1))) {
+                    return field.getFigure(new Point(i, 0));
+                }
+            }
+
+            for (int i = 0; i < field.getSize(); i++) {
+                if (check(field, new Point(0, i), p -> new Point(p.x + 1, p.y))) {
+                    return field.getFigure(new Point(0, i));
+                }
+            }
+
+
+            if (check(field, new Point(0, 0), p -> new Point(p.x + 1, p.y + 1))) {
+                return field.getFigure(new Point(0, 0));
+            }
+
+            if (check(field, new Point(0, field.getSize() - 1), p -> new Point(p.x + 1, p.y - 1))) {
+
+                return field.getFigure(new Point(0, field.getSize() - 1));
             }
         }
-
-        for (int i = 0; i < field.getSize(); i++) {
-            if (check(field, new Point(0, i), p -> new Point(p.x + 1, p.y))) {
-                return field.getFigure(new Point (0, i));
-            }
-        }
-
-
-        if (check(field, new Point(0, 0), p -> new Point(p.x + 1, p.y + 1))) {
-            return field.getFigure(new Point (0,0));
-        }
-
-        if (check(field, new Point(0, field.getSize() - 1), p -> new Point(p.x + 1, p.y - 1))) {
-            return field.getFigure(new Point (0, field.getSize() - 1));
+        catch (InvalidPointException e) {
+            e.printStackTrace();
         }
 
         return null;
@@ -59,7 +65,7 @@ public class WinnerController {
 
     private interface IPointGenerator {
 
-        public Point next(final Point point);
+        Point next(final Point point);
     }
 
 }
