@@ -23,6 +23,7 @@ public class View {
     }
 
     public void showField() throws InvalidPointException {
+        System.out.print("\n");
         for (int i = 0; i < field.getSize(); i++) {
             System.out.println(separationLine);
             for (int i2 = 0; i2 < field.getSize(); i2++) {
