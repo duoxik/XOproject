@@ -22,10 +22,7 @@ public class XOCLI {
         while (consoleView.move(gameXO)) {
             consoleView.show(gameXO);
 
-
         }
-
-
     }
 
 }
