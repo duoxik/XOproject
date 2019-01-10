@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class CurrentMoveController {
 
-    public Figure currentMove(final Field field) throws InvalidPointException {
+    public Figure currentMove(final Field field) {
 
         int countFigure = 0;
 
@@ -25,12 +25,16 @@ public class CurrentMoveController {
         return Figure.O;
     }
 
-    private int countFiguresInRow(final Field field, final int row) throws InvalidPointException {
+    private int countFiguresInRow(final Field field, final int row) {
         int countFigure = 0;
 
-        for(int i = 0; i < field.getSize(); i++) {
-            if (field.getFigure(new Point(row, i)) != null)
-                countFigure++;
+        try {
+            for (int i = 0; i < field.getSize(); i++) {
+                if (field.getFigure(new Point(row, i)) != null)
+                    countFigure++;
+            }
+        } catch (InvalidPointException e) {
+                e.printStackTrace();
         }
 
         return countFigure;
