@@ -1,7 +1,6 @@
 package com.duoxik.XO.model;
 
 import com.duoxik.XO.model.Exceptions.InvalidPointException;
-import com.duoxik.XO.model.Exceptions.AlreadyOccupiedException;
 
 import java.awt.*;
 
