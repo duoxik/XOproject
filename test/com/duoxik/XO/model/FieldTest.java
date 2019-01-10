@@ -1,6 +1,5 @@
 package com.duoxik.XO.model;
 
-import com.duoxik.XO.model.Exceptions.AlreadyOccupiedException;
 import com.duoxik.XO.model.Exceptions.InvalidPointException;
 import org.junit.Test;
 
