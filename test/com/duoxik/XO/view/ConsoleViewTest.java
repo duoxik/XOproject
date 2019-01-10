@@ -7,17 +7,17 @@ import org.junit.Test;
 
 import java.awt.*;
 
-public class ViewTest {
+public class ConsoleViewTest {
 
     @Test
-    public void showField() throws InvalidPointException {
+    public void show() throws InvalidPointException {
 
-        Field field = new Field(4);
+        final Field field = new Field(4);
         field.setFigure(new Point(1, 1), Figure.X);
         field.setFigure(new Point(2, 1), Figure.O);
-        View view = new View(field);
+        ConsoleView consoleView = new ConsoleView(field);
 
-        view.showField();
+        consoleView.show();
 
     }
 }

@@ -19,7 +19,7 @@ public class MoveControllerTest {
         final Point inputPoint = new Point(1, 1);
         final Figure inputFigure = Figure.X;
 
-        MoveController moveController = new MoveController();
+        final MoveController moveController = new MoveController();
         moveController.applyFigure(inputField, inputFigure, inputPoint);
 
         try {

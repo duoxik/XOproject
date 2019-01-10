@@ -14,37 +14,37 @@ public class CurrentMoveControllerTest {
     @Test
     public void currentMoveWhenNextMoveIsO() throws InvalidPointException {
 
-        Figure expectedFigure = Figure.O;
-        CurrentMoveController currentMoveController = new CurrentMoveController();
-        Field inputField = new Field(3);
+        final Figure expectedFigure = Figure.O;
+        final CurrentMoveController currentMoveController = new CurrentMoveController();
+        final Field inputField = new Field(3);
         inputField.setFigure(new Point(0, 0), Figure.X);
         inputField.setFigure(new Point(0, 1), Figure.O);
         inputField.setFigure(new Point(0, 2), Figure.X);
-        Figure actualFigure = currentMoveController.currentMove(inputField);
+        final Figure actualFigure = currentMoveController.currentMove(inputField);
         assertEquals(expectedFigure, actualFigure);
     }
 
     @Test
     public void currentMoveWhenNextMoveIsX() throws InvalidPointException {
 
-        Figure expectedFigure = Figure.X;
+        final Figure expectedFigure = Figure.X;
         CurrentMoveController currentMoveController = new CurrentMoveController();
-        Field inputField = new Field(3);
+        final Field inputField = new Field(3);
         inputField.setFigure(new Point(0, 0), Figure.X);
         inputField.setFigure(new Point(0, 1), Figure.O);
         inputField.setFigure(new Point(0, 2), Figure.X);
         inputField.setFigure(new Point(1, 0), Figure.X);
         inputField.setFigure(new Point(1, 1), Figure.O);
         inputField.setFigure(new Point(1, 2), Figure.O);
-        Figure actualFigure = currentMoveController.currentMove(inputField);
+        final Figure actualFigure = currentMoveController.currentMove(inputField);
         assertEquals(expectedFigure, actualFigure);
     }
 
     @Test
     public void currentMoveWhenNextMoveIsNull() throws InvalidPointException {
 
-        CurrentMoveController currentMoveController = new CurrentMoveController();
-        Field inputField = new Field(3);
+        final CurrentMoveController currentMoveController = new CurrentMoveController();
+        final Field inputField = new Field(3);
         inputField.setFigure(new Point(0, 0), Figure.X);
         inputField.setFigure(new Point(0, 1), Figure.O);
         inputField.setFigure(new Point(0, 2), Figure.X);
@@ -54,7 +54,7 @@ public class CurrentMoveControllerTest {
         inputField.setFigure(new Point(2, 0), Figure.X);
         inputField.setFigure(new Point(2, 1), Figure.O);
         inputField.setFigure(new Point(2, 2), Figure.X);
-        Figure actualFigure = currentMoveController.currentMove(inputField);
+        final Figure actualFigure = currentMoveController.currentMove(inputField);
         assertNull(actualFigure);
     }
 
