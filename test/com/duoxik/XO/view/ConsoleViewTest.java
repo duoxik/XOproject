@@ -14,11 +14,11 @@ public class ConsoleViewTest {
     public void show() throws InvalidPointException {
 
 
-        final Field field = new Field(4);
+        final Field<Figure> field = new Field<>(4);
         field.setFigure(new Point(1, 1), Figure.X);
         field.setFigure(new Point(2, 1), Figure.O);
 
-        final Game game = new Game(null, field, null);
+        final Game<Figure> game = new Game<>(null, field, null);
 
         ConsoleView consoleView = new ConsoleView();
 

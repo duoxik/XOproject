@@ -16,7 +16,7 @@ public class CurrentMoveControllerTest {
 
         final Figure expectedFigure = Figure.O;
         final CurrentMoveController currentMoveController = new CurrentMoveController();
-        final Field inputField = new Field(3);
+        final Field inputField = new Field<>(3);
         inputField.setFigure(new Point(0, 0), Figure.X);
         inputField.setFigure(new Point(0, 1), Figure.O);
         inputField.setFigure(new Point(0, 2), Figure.X);
@@ -29,7 +29,7 @@ public class CurrentMoveControllerTest {
 
         final Figure expectedFigure = Figure.X;
         CurrentMoveController currentMoveController = new CurrentMoveController();
-        final Field inputField = new Field(3);
+        final Field inputField = new Field<>(3);
         inputField.setFigure(new Point(0, 0), Figure.X);
         inputField.setFigure(new Point(0, 1), Figure.O);
         inputField.setFigure(new Point(0, 2), Figure.X);
@@ -44,7 +44,7 @@ public class CurrentMoveControllerTest {
     public void currentMoveWhenNextMoveIsNull() throws InvalidPointException {
 
         final CurrentMoveController currentMoveController = new CurrentMoveController();
-        final Field inputField = new Field(3);
+        final Field inputField = new Field<>(3);
         inputField.setFigure(new Point(0, 0), Figure.X);
         inputField.setFigure(new Point(0, 1), Figure.O);
         inputField.setFigure(new Point(0, 2), Figure.X);

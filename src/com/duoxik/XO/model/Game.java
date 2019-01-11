@@ -1,14 +1,14 @@
 package com.duoxik.XO.model;
 
-public class Game {
+public class Game<F> {
 
     private final String gameName;
 
     private final Player[] players;
 
-    private final Field field;
+    private final Field<F> field;
 
-    public Game(final Player[] players, final Field field, final String gameName) {
+    public Game(final Player[] players, final Field<F> field, final String gameName) {
         this.gameName = gameName;
         this.players = players;
         this.field = field;
@@ -22,7 +22,7 @@ public class Game {
         return players;
     }
 
-    public Field getField() {
+    public Field<F> getField() {
         return field;
     }
 }

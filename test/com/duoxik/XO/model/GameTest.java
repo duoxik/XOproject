@@ -14,7 +14,7 @@ public class GameTest {
         final String inputGameName = "XO";
         final String expectedGameName = inputGameName;
 
-        final Game game = new Game(null, null, inputGameName);
+        final Game<Figure> game = new Game<>(null, null, inputGameName);
         final String actualGameName = game.getGameName();
 
         assertEquals(expectedGameName, actualGameName);
@@ -26,7 +26,7 @@ public class GameTest {
         final Player[] inputPlayers = new Player[]{new Player("Volodya", Figure.X), new Player("Vlad", Figure.O)};
         final Player[] expectedPlayers = new Player[]{new Player("Volodya", Figure.X), new Player("Vlad", Figure.O)};
 
-        final Game game = new Game(inputPlayers, null, null);
+        final Game<Figure> game = new Game<>(inputPlayers, null, null);
         final Player[] actualPlayers = game.getPlayers();
 
         assertEquals(expectedPlayers[0].getName(), actualPlayers[0].getName());
@@ -39,12 +39,12 @@ public class GameTest {
     @Test
     public void getField() throws Exception {
 
-        final Field inputField = new Field(3);
+        final Field inputField = new Field<>(3);
         inputField.setFigure(new Point(1, 1), Figure.X);
-        final Field expectedField = new Field(3);
+        final Field expectedField = new Field<>(3);
         expectedField.setFigure(new Point(1, 1), Figure.X);
 
-        final Game game = new Game(null, inputField, null);
+        final Game<Figure> game = new Game<>(null, inputField, null);
 
         //game.getField().setFigure(new Point(1, 1), Figure.O);
 

@@ -14,7 +14,7 @@ public class WinnerControllerTest {
     @Test
     public void getWinnerWhenFieldIsEmpty() throws InvalidPointException {
 
-        final Field inputField = new Field(4);
+        final Field inputField = new Field<>(4);
         final  WinnerController testWinnerController = new WinnerController();
         final Figure actualFigure = testWinnerController.getWinner(inputField);
         System.out.print("Winner null: ");
@@ -27,7 +27,7 @@ public class WinnerControllerTest {
         final Figure expectedFigure = Figure.X;
         for (int i = 0; i < 4; i++) {
             WinnerController testWinnerController = new WinnerController();
-            Field inputField = new Field(4);
+            Field inputField = new Field<>(4);
             inputField.setFigure(new Point(i, 0), Figure.X);
             inputField.setFigure(new Point(i, 1), Figure.X);
             inputField.setFigure(new Point(i, 2), Figure.X);
@@ -42,7 +42,7 @@ public class WinnerControllerTest {
 
         for (int i = 0; i < 4; i++) {
             WinnerController testWinnerController = new WinnerController();
-            Field inputField = new Field(4);
+            Field inputField = new Field<>(4);
             inputField.setFigure(new Point(i, 0), Figure.X);
             inputField.setFigure(new Point(i, 1), Figure.O);
             inputField.setFigure(new Point(i, 2), Figure.X);
@@ -58,7 +58,7 @@ public class WinnerControllerTest {
         final Figure expectedFigure = Figure.X;
         for (int i = 0; i < 4; i++) {
             WinnerController testWinnerController = new WinnerController();
-            Field inputField = new Field(4);
+            Field inputField = new Field<>(4);
             inputField.setFigure(new Point(0, i), Figure.X);
             inputField.setFigure(new Point(1, i), Figure.X);
             inputField.setFigure(new Point(2, i), Figure.X);
@@ -73,7 +73,7 @@ public class WinnerControllerTest {
 
         for (int i = 0; i < 4; i++) {
             WinnerController testWinnerController = new WinnerController();
-            Field inputField = new Field(4);
+            Field inputField = new Field<>(4);
             inputField.setFigure(new Point(0, i), Figure.X);
             inputField.setFigure(new Point(1, i), Figure.X);
             inputField.setFigure(new Point(2, i), Figure.O);
@@ -87,7 +87,7 @@ public class WinnerControllerTest {
     public void getWinnerWhenWinnerIsODiagonal() throws InvalidPointException {
 
         final Figure expectedFigure = Figure.O;
-        final Field inputField = new Field(4);
+        final Field inputField = new Field<>(4);
         inputField.setFigure(new Point(0, 0), Figure.O);
         inputField.setFigure(new Point(1, 1), Figure.O);
         inputField.setFigure(new Point(2, 2), Figure.O);
@@ -100,7 +100,7 @@ public class WinnerControllerTest {
     @Test
     public void getWinnerWhenWinnerIsNullDiagonal() throws InvalidPointException {
 
-        final Field inputField = new Field(4);
+        final Field inputField = new Field<>(4);
         inputField.setFigure(new Point(0, 0), Figure.O);
         inputField.setFigure(new Point(1, 1), Figure.O);
         inputField.setFigure(new Point(2, 2), Figure.X);
@@ -114,7 +114,7 @@ public class WinnerControllerTest {
     public void getWinnerWhenWinnerIsXDiagonal2() throws InvalidPointException {
 
         final Figure expectedFigure = Figure.X;
-        final Field inputField = new Field(4);
+        final Field inputField = new Field<>(4);
         inputField.setFigure(new Point(3, 0), Figure.X);
         inputField.setFigure(new Point(2, 1), Figure.X);
         inputField.setFigure(new Point(1, 2), Figure.X);
@@ -127,7 +127,7 @@ public class WinnerControllerTest {
     @Test
     public void getWinnerWhenWinnerIsNullDiagonal2() throws InvalidPointException {
 
-        final Field inputField = new Field(4);
+        final Field inputField = new Field<>(4);
         inputField.setFigure(new Point(3, 0), Figure.X);
         inputField.setFigure(new Point(2, 1), Figure.O);
         inputField.setFigure(new Point(1, 2), Figure.X);
