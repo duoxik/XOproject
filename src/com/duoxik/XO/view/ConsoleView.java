@@ -8,6 +8,7 @@ import com.duoxik.XO.model.Exceptions.InvalidPointException;
 import com.duoxik.XO.model.Field;
 import com.duoxik.XO.model.Figure;
 import com.duoxik.XO.model.Game;
+import com.duoxik.XO.model.Player;
 
 import java.awt.*;
 import java.util.InputMismatchException;
@@ -26,6 +27,8 @@ public class ConsoleView {
         final Field<Figure> field = game.getField();
 
         System.out.format("Game name: %s\n", game.getGameName());
+
+        printPlayers(game);
 
         for (int i = 0; i < field.getSize(); i++) {
             printSeparator(field.getSize());
@@ -101,6 +104,13 @@ public class ConsoleView {
         }
 
         System.out.println(separationString);
+    }
+
+    private void printPlayers(Game<Figure> game) {
+        System.out.println("Players: ");
+        for (Player player : game) {
+            System.out.format("Player name: %s; figure: %s\n", player.getName(), player.getFigure());
+        }
     }
 
 }
