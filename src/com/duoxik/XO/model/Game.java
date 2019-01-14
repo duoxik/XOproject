@@ -1,6 +1,10 @@
 package com.duoxik.XO.model;
 
-public class Game<F> {
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
+public class Game<F> implements Iterable<Player>{
 
     private final String gameName;
 
@@ -24,5 +28,11 @@ public class Game<F> {
 
     public Field<F> getField() {
         return field;
+    }
+
+    @Override
+    public Iterator<Player> iterator() {
+        List<Player> playerList = Arrays.asList(players);
+        return playerList.iterator();
     }
 }
