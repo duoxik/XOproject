@@ -3,6 +3,7 @@ package com.duoxik.XO.model;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class Game<F> implements Iterable<Player>{
 
@@ -46,6 +47,7 @@ public class Game<F> implements Iterable<Player>{
 
         @Override
         public Player next() {
+            if (!hasNext()) throw new NoSuchElementException();
             return Game.this.players[index++];
         }
     }
